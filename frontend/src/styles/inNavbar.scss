@@ -1,0 +1,31 @@
+@import "./global.module.scss";
+
+.inNavbar-container {
+  background-color: $mc;
+  @include flexify(row, space-between, center);
+  height: 100px;
+
+  div:first-child {
+    margin: auto;
+  }
+
+  &-btn {
+    width: 60%;
+    @include flexify(row, center, center);
+    & > span {
+      padding: 1em;
+      cursor: pointer;
+      user-select: none;
+      font-size: 80%;
+      &:not(:last-child) {
+        border-right: 1px solid $sc;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .inNavbar-container-btn {
+    @include flexify(row, flex-end, center);
+  }
+}

@@ -1,0 +1,32 @@
+@import "./global.module.scss";
+
+.edit-story-container,
+.read-story-container {
+  color: $mc;
+
+  &-header {
+    @include flexify(row, center, center);
+    margin-top: 20px;
+  }
+
+  &-mainbar {
+    @include flexify(row, center, center);
+    margin: 20px 0px;
+
+    & > * {
+      padding: 0px 10px;
+      cursor: pointer;
+    }
+  }
+
+  &-editor {
+    min-height: 40vh;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0px 10px;
+    resize: vertical;
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  }
+}

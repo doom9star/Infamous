@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Montserrat:wght@100;700&display=swap");
+
+$mc: lighten(black, 10%);
+$sc: rgb(7, 121, 214);
+$ff: "Inconsolata";
+
+:export {
+  mc: $mc;
+  sc: $sc;
+  ff: $ff;
+}
+
+body {
+  margin: 0;
+  font-family: $ff;
+}
+
+#main {
+  width: 70vw;
+  margin: 10px auto;
+}
+
+@media screen and (max-width: 956px) {
+  #main {
+    width: 95vw;
+  }
+}
+::-webkit-scrollbar {
+  width: 0.3em;
+  height: 0.3em;
+  background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $mc;
+}
+
+@mixin flexify($dir, $jc, $al) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jc;
+  align-items: $al;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}

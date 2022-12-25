@@ -1,0 +1,19 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "root",
+  "password": "root",
+  "database": "infamous",
+  "synchronize": true,
+  "logging": false,
+  "cache": true,
+  "entities": ["src/mysql/entity/**/*.ts"],
+  "migrations": ["src/mysql/migration/**/*.ts"],
+  "subscribers": ["src/mysql/subscriber/**/*.ts"],
+  "cli": {
+    "entitiesDir": "src/mysql/entity",
+    "migrationsDir": "src/mysql/migration",
+    "subscribersDir": "src/mysql/subscriber"
+  }
+}

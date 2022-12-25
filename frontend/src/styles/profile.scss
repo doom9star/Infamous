@@ -1,0 +1,39 @@
+@import "./global.module.scss";
+.profile-container {
+  position: relative;
+  margin-bottom: 2rem;
+
+  &-image {
+    @include flexify(column, center, center);
+    transform: translate(0px, -70px);
+    &-container {
+      @include flexify(row, center, center);
+      border-radius: 100%;
+      background-color: white;
+      padding: 0.3em;
+    }
+
+    & > span {
+      color: $mc;
+      font-size: 150%;
+      margin-top: 10px;
+    }
+  }
+  & > p {
+    font-weight: bold;
+    color: lighten($mc, $amount: 30%);
+    word-spacing: 0.2em;
+    text-align: center;
+    transform: translate(0px, -50px);
+  }
+}
+
+@media screen and (max-width: 956px) {
+  .profile-container-image {
+    &-container > img {
+      width: 5rem;
+      height: 5rem;
+    }
+    transform: translate(0px, -50px);
+  }
+}

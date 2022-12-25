@@ -1,0 +1,30 @@
+@import "./global.module.scss";
+
+.view-story-container {
+  margin: 2rem 0rem;
+
+  &-header {
+    @include flexify(row, none, center);
+    margin-bottom: 2rem;
+  }
+
+  &-title {
+    text-align: center;
+    font-size: 2rem;
+    width: 100%;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: $mc;
+  }
+  &-btns {
+    @include flexify(row, center, none);
+    margin-left: auto;
+  }
+
+  &-genre {
+    opacity: 0.7;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: right;
+  }
+}

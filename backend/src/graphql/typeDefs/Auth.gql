@@ -1,0 +1,20 @@
+input AuthLoginArgs {
+  email: String!
+  password: String!
+}
+input AuthRegisterArgs {
+  name: String!
+  email: String!
+  password: String!
+}
+
+type AuthResponse implements Response {
+  status: Int!
+  user: User
+}
+
+type Mutation {
+  register(args: AuthRegisterArgs!): AuthResponse!
+  login(args: AuthLoginArgs!): AuthResponse!
+  logout: GeneralResponse!
+}

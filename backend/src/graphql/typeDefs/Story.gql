@@ -1,0 +1,60 @@
+type Story {
+  id: ID!
+  title: String!
+  thumbnail: Image
+  pages: [String!]!
+  published: Boolean!
+  description: String
+  genre: String
+  user: User
+}
+
+type StoriesResponse implements Response {
+  status: Int!
+  public: [Story!]
+  published: [Story!]
+  unpublished: [Story!]
+}
+
+type StoryResponse implements Response {
+  status: Int!
+  story: Story
+}
+
+type SearchStoriesResponse implements Response {
+  status: Int!
+  stories: [Story!]!
+}
+
+type CreateStoryResponse implements Response {
+  status: Int!
+  id: ID
+}
+
+input createStoryArgs {
+  title: String!
+  thumbnail: Upload
+}
+
+input updateStoryArgs {
+  sid: ID!
+  title: String!
+  thumbnail: Upload
+  thumbnailState: UpdateImageState!
+  pages: [String!]!
+  published: Boolean!
+  description: String
+  genre: String
+}
+
+type Query {
+  getStories(type: StoryType!, genre: String, uid: String): StoriesResponse!
+  getStory(sid: String!): StoryResponse!
+  getSearchStories(query: String!): SearchStoriesResponse!
+}
+
+type Mutation {
+  createStory(args: createStoryArgs!): CreateStoryResponse!
+  updateStory(args: updateStoryArgs!): GeneralResponse!
+  deleteStory(sid: String!): GeneralResponse!
+}

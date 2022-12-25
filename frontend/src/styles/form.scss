@@ -1,0 +1,41 @@
+@import "./global.module.scss";
+.form-container {
+  height: 100vh;
+  @include flexify(column, center, center);
+
+  &-wrapper {
+    @include flexify(column, none, none);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 2em;
+    width: 400px;
+    position: relative;
+    & > div {
+      @include flexify(row, center, center);
+      margin-bottom: 3%;
+      width: 100%;
+      & > input {
+        width: 100%;
+        padding: 1em;
+        border: none;
+        margin-left: 1em;
+        &:focus {
+          outline: none;
+          background-color: rgba(0, 0, 0, 0.05);
+        }
+      }
+      & > i {
+        color: $mc;
+      }
+    }
+    &-btn {
+      margin-top: 1em;
+      @include flexify(row, center, center);
+      & > button {
+        padding: 1em 2em;
+        &:not(:last-child) {
+          margin-right: 1em;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@import "./global.module.scss";
+
+.stories-container {
+  margin: 1rem 0rem;
+  position: relative;
+  min-height: 500px;
+
+  &-genres {
+    @include flexify(row, center, center);
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    & > span {
+      margin-top: 1rem;
+      margin-right: 0.8rem;
+      background-color: rgb(240, 240, 240);
+      padding: 0.7rem 2rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 1s;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &-search-results {
+    background-color: rgb(245, 245, 245);
+    position: absolute;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+    min-height: 100px;
+    top: 8%;
+    z-index: 1;
+    left: 0%;
+    width: 60%;
+    padding: 1rem 2rem;
+    & > div:not(.stories-container-search-results-none) {
+      @include flexify(row, none, center);
+      margin: 1rem 0rem;
+      cursor: pointer;
+      transition: all 1s;
+      &:hover {
+        opacity: 0.5;
+      }
+      & > div {
+        margin-right: 1rem;
+      }
+      & > span:last-child {
+        margin-left: auto;
+        opacity: 0.5;
+      }
+    }
+
+    &-none {
+      @include flexify(column, center, center);
+      height: 100px;
+    }
+  }
+}

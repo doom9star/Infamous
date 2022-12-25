@@ -1,0 +1,23 @@
+interface Response {
+  status: Int!
+}
+
+type GeneralResponse implements Response {
+  status: Int!
+}
+
+type Image {
+  url: String
+  filename: String
+}
+
+enum UpdateImageState {
+  UPDATE
+  REMOVE
+  NONE
+}
+
+enum StoryType {
+  PUBLIC
+  PRIVATE
+}

@@ -1,0 +1,43 @@
+@import "./global.module.scss";
+
+.landing-container {
+  .floating-ftr {
+    @include flexify(column, center, center);
+    position: absolute;
+    width: 30%;
+    color: lighten($color: $mc, $amount: 20%);
+
+    & > i {
+      font-size: 2em;
+    }
+    &-title {
+      font-size: 120%;
+      padding-top: 0.5em;
+      white-space: nowrap;
+    }
+
+    &-description {
+      text-align: center;
+      padding-top: 0.5em;
+      word-spacing: 0.2em;
+      font-weight: bold;
+      opacity: 0.7;
+    }
+  }
+
+  &-poster {
+    height: 100vh;
+    @include flexify(row, center, center);
+    font-size: 12vw;
+
+    & > span {
+      font-family: fantasy;
+      color: $mc;
+      &:nth-child(1) {
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: $mc;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}

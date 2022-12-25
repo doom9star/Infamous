@@ -1,0 +1,46 @@
+@import "./global.module.scss";
+
+.publish-story-container {
+  @include flexify(column, none, center);
+
+  &-header {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: $mc;
+
+    & > i {
+      color: $sc;
+    }
+  }
+
+  &-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: $mc;
+  }
+
+  &-genre {
+    margin: 1rem 0rem;
+    align-self: flex-start;
+    width: 100%;
+  }
+
+  &-description {
+    @include flexify(row, none, center);
+    margin: 1rem 0rem;
+    align-self: flex-start;
+    width: 100%;
+
+    & > textarea {
+      width: 50%;
+      margin-left: 1rem;
+      padding: 0.5rem;
+      resize: none;
+      height: 200px;
+    }
+  }
+}
